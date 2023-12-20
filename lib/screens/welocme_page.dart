@@ -58,7 +58,7 @@ class _WelcomePageState extends State<WelcomePage> {
               style: TextStyle(color: Colors.black),
             ),
             SizedBox(
-              height: screenHeight * 0.05,
+              height: screenHeight * 0.04,
             ),
             Container(
               height: screenHeight * 0.09,
