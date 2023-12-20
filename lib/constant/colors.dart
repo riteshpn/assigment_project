@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
-class ColorsConstant {
+class CommonConstant {
   static const lightBlue =
       Colors.lightBlue; // Replace with your primary color code
   static const darkBlue = Color.fromARGB(
       255, 36, 133, 212); // Replace with your secondary color code
 
   // Text styles
-  static const TextStyle headingTextStyle = TextStyle(
-    fontSize: 24,
+  static const TextStyle  blueheadingTextStyle = TextStyle(
+    fontSize: 30,
     fontWeight: FontWeight.bold,
-    color: Colors.white,
+    color: Colors.blue,
+  );
+   static const TextStyle black = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
   );
   static const TextStyle headingTextStyle2 = TextStyle(
     fontSize: 24,
@@ -22,13 +27,5 @@ class ColorsConstant {
     fontSize: 16,
     color: Colors.grey,
   );
-  static MediaQueryData? _mediaQueryData;
-  static double? screenWidth;
-  static double? screenHeight;
-
-  static void setMediaQuery(BuildContext context) {
-    _mediaQueryData = MediaQuery.of(context);
-    screenWidth = _mediaQueryData!.size.width;
-    screenHeight = _mediaQueryData!.size.height;
-  }
+ 
 }
