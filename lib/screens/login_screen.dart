@@ -13,9 +13,9 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Padding(
           padding: const EdgeInsets.only(top: 12),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -81,8 +81,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Text('Not have account?'),
                   ),
                   Center(
-                      child:
-                          InkWell(onTap: () {}, child: const Text('Signup here')))
+                      child: InkWell(
+                          onTap: () {}, child: const Text('Signup here')))
                 ],
               )
             ],
