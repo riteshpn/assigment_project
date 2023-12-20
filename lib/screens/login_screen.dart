@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: CommonConstant.darkBlue,
                 child: Center(
                   child: Text(
-                    'Login',
+                    'Logi',
                     style: TextStyle(
                       fontSize: 45,
                       fontWeight: FontWeight.bold,
