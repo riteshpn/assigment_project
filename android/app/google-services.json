@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "615387534431",
+    "firebase_url": "https://fir-getx-app-b76a5-default-rtdb.firebaseio.com",
+    "project_id": "fir-getx-app-b76a5",
+    "storage_bucket": "fir-getx-app-b76a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615387534431:android:1ab94810f0217af6dcf7ea",
+        "android_client_info": {
+          "package_name": "com.example.assigment_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615387534431-ic4jjac8qqncb6pkuuh88ofcfopeomk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALlnX1y8NUMX6Lw2Y2I8hvRocqk5mj6dg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615387534431-897r6cravr693aqurs4td92g4jtbnngp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "615387534431-rjohkcalqomui10n6ebipe34otoctem4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.riteshfirebase.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615387534431:android:3ccee7dbbc3749e1dcf7ea",
+        "android_client_info": {
+          "package_name": "com.example.riteshfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615387534431-hftja012rnrcd5q2156at41p9tnk6uun.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.riteshfirebase",
+            "certificate_hash": "e9703feaabb42346b8a182715de415a7d82491c1"
+          }
+        },
+        {
+          "client_id": "615387534431-ic4jjac8qqncb6pkuuh88ofcfopeomk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALlnX1y8NUMX6Lw2Y2I8hvRocqk5mj6dg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615387534431-897r6cravr693aqurs4td92g4jtbnngp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "615387534431-rjohkcalqomui10n6ebipe34otoctem4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.riteshfirebase.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

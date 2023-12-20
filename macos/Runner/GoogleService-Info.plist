@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>615387534431-p7iiipo2rghisgjittt1u69an88agi66.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.615387534431-p7iiipo2rghisgjittt1u69an88agi66</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>615387534431-hftja012rnrcd5q2156at41p9tnk6uun.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAxQ3zGXrQOpXtjsPVLM4s6gI-GMTISo6o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>615387534431</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.assigmentProject.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>fir-getx-app-b76a5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-getx-app-b76a5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:615387534431:ios:d7f01a4765105bbcdcf7ea</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-getx-app-b76a5-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
