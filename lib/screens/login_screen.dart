@@ -13,78 +13,80 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(top: 12),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            ClipPath(
-              clipper: Clip1Clipper(),
-              child: Container(
-                height: 250,
-                width: 250,
-                color: CommonConstant.darkBlue,
-                child: const Center(
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontSize: 45,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+    return SingleChildScrollView(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.only(top: 12),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              ClipPath(
+                clipper: Clip1Clipper(),
+                child: Container(
+                  height: 250,
+                  width: 250,
+                  color: CommonConstant.darkBlue,
+                  child: const Center(
+                    child: Text(
+                      'Login',
+                      style: TextStyle(
+                        fontSize: 45,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 100,
-            ),
-            const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                child: CustomTextFormField(
-                  labelText: 'Email',
-                  hintText: 'hello@reallygreat',
-                  inputType: TextInputType.emailAddress,
-                )),
-            const SizedBox(
-              height: 35,
-            ),
-            const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                child: CustomTextFormField(
-                  hintText: 'Password',
-                  labelText: '*******',
-                  isPasswordField: true,
-                  inputType: TextInputType.text,
-                )),
-            const SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: BlueButton(title: 'login', onTap: () {}),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Center(
-                  child: Text('Not have account?'),
-                ),
-                Center(
-                    child:
-                        InkWell(onTap: () {}, child: const Text('Signup here')))
-              ],
-            )
-          ],
+              const SizedBox(
+                height: 100,
+              ),
+              const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: CustomTextFormField(
+                    labelText: 'Email',
+                    hintText: 'hello@reallygreat',
+                    inputType: TextInputType.emailAddress,
+                  )),
+              const SizedBox(
+                height: 35,
+              ),
+              const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: CustomTextFormField(
+                    hintText: '*******',
+                    labelText: 'Password',
+                    isPasswordField: true,
+                    inputType: TextInputType.text,
+                  )),
+              const SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: BlueButton(title: 'login', onTap: () {}),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Column(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Center(
+                    child: Text('Not have account?'),
+                  ),
+                  Center(
+                      child:
+                          InkWell(onTap: () {}, child: const Text('Signup here')))
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
