@@ -49,7 +49,72 @@ class _WelcomePageState extends State<WelcomePage> {
             SizedBox(
               height: screenHeight * 0.08,
             ),
-            Text('Sign Up', style: CommonConstant.black),
+            const Text(
+              'Sign Up',
+              style: CommonConstant.black,
+            ),
+            const Text(
+              'Continue With Mail',
+              style: TextStyle(color: Colors.black),
+            ),
+            SizedBox(
+              height: screenHeight * 0.05,
+            ),
+            Container(
+              height: screenHeight * 0.09,
+              width: screenWidth * 0.8,
+              decoration: BoxDecoration(
+                color: CommonConstant.lightBlue,
+                borderRadius: BorderRadius.circular(screenWidth * 0.1),
+              ),
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 0,
+                    bottom: 0,
+                    left: screenWidth * 0.04,
+                    child: Center(
+                      child: Container(
+                        height: screenHeight * 0.06,
+                        width: screenHeight * 0.06,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius:
+                              BorderRadius.circular(screenHeight * 0.06),
+                        ),
+                        child: const Icon(
+                          Icons.email,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Center(
+                    child: Text(
+                      'Countinue with Mail',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: screenHeight * 0.03,
+            ),
+            Container(
+              height: screenHeight * 0.07,
+              width: screenWidth * 0.75,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(screenHeight * 0.08),
+                border: Border.all(
+                  color: Colors.black,
+                  width: 2,
+                ),
+              ),
+              child: const Center(
+                child: Text('Sign As Guest'),
+              ),
+            ),
           ],
         ),
       ),
