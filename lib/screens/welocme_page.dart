@@ -1,4 +1,5 @@
 import 'package:assigment_project/constant/colors.dart';
+import 'package:assigment_project/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -60,44 +61,52 @@ class _WelcomePageState extends State<WelcomePage> {
             SizedBox(
               height: screenHeight * 0.04,
             ),
-            Container(
-              height: screenHeight * 0.09,
-              width: screenWidth * 0.9,
-              decoration: BoxDecoration(
-                color: CommonConstant.lightBlue,
-                borderRadius: BorderRadius.circular(screenWidth * 0.1),
-              ),
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: 0,
-                    bottom: 0,
-                    left: screenWidth * 0.04,
-                    child: Center(
-                      child: Container(
-                        height: screenHeight * 0.06,
-                        width: screenHeight * 0.06,
-                        decoration: BoxDecoration(
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                );
+              },
+              child: Container(
+                height: screenHeight * 0.09,
+                width: screenWidth * 0.9,
+                decoration: BoxDecoration(
+                  color: CommonConstant.lightBlue,
+                  borderRadius: BorderRadius.circular(screenWidth * 0.1),
+                ),
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: 0,
+                      bottom: 0,
+                      left: screenWidth * 0.04,
+                      child: Center(
+                        child: Container(
+                          height: screenHeight * 0.06,
+                          width: screenHeight * 0.06,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                BorderRadius.circular(screenHeight * 0.06),
+                          ),
+                          child: const Icon(
+                            Icons.email,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const Center(
+                      child: Text(
+                        'Countinue with Mail',
+                        style: TextStyle(
                           color: Colors.white,
-                          borderRadius:
-                              BorderRadius.circular(screenHeight * 0.06),
-                        ),
-                        child: const Icon(
-                          Icons.email,
-                          color: Colors.blue,
                         ),
                       ),
                     ),
-                  ),
-                  const Center(
-                    child: Text(
-                      'Countinue with Mail',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             SizedBox(
