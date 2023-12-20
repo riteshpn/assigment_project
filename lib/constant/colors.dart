@@ -7,13 +7,13 @@ class CommonConstant {
       255, 36, 133, 212); // Replace with your secondary color code
 
   // Text styles
-  static const TextStyle  blueheadingTextStyle = TextStyle(
-    fontSize: 30,
+  static const TextStyle blueheadingTextStyle = TextStyle(
+    fontSize: 35,
     fontWeight: FontWeight.bold,
-    color: Colors.blue,
+    color: Color.fromARGB(255, 36, 133, 212),
   );
-   static const TextStyle black = TextStyle(
-    fontSize: 30,
+  static const TextStyle black = TextStyle(
+    fontSize: 33,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
@@ -27,5 +27,4 @@ class CommonConstant {
     fontSize: 16,
     color: Colors.grey,
   );
- 
 }

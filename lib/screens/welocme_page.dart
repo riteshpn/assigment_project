@@ -23,31 +23,31 @@ class _WelcomePageState extends State<WelcomePage> {
             Icon(
               Icons.home,
               color: CommonConstant.lightBlue,
-              size: screenWidth * 0.25,
+              size: screenWidth * 0.45,
             ),
             const Text(
               'Apna Ghar',
               style: CommonConstant.blueheadingTextStyle,
             ),
             SizedBox(
-              height: screenHeight * 0.03,
+              height: screenHeight * 0.02,
             ),
             const Center(
               child: Column(
                 children: [
                   Text(
                     'For Every Home problems we',
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.blue, fontSize: 17),
                   ),
                   Text(
                     'have solution',
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.blue, fontSize: 17),
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: screenHeight * 0.08,
+              height: screenHeight * 0.09,
             ),
             const Text(
               'Sign Up',
@@ -62,7 +62,7 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             Container(
               height: screenHeight * 0.09,
-              width: screenWidth * 0.8,
+              width: screenWidth * 0.9,
               decoration: BoxDecoration(
                 color: CommonConstant.lightBlue,
                 borderRadius: BorderRadius.circular(screenWidth * 0.1),
@@ -92,18 +92,20 @@ class _WelcomePageState extends State<WelcomePage> {
                   const Center(
                     child: Text(
                       'Countinue with Mail',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: screenHeight * 0.03,
+              height: screenHeight * 0.02,
             ),
             Container(
               height: screenHeight * 0.07,
-              width: screenWidth * 0.75,
+              width: screenWidth * 0.83,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(screenHeight * 0.08),
                 border: Border.all(
