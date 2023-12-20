@@ -1,4 +1,5 @@
 import 'package:assigment_project/constant/colors.dart';
+import 'package:assigment_project/widgets/blue_button.dart';
 import 'package:assigment_project/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ClipPath(
@@ -28,9 +29,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 250,
                 width: 250,
                 color: CommonConstant.darkBlue,
-                child: Center(
+                child: const Center(
                   child: Text(
-                    'Logi',
+                    'Login',
                     style: TextStyle(
                       fontSize: 45,
                       fontWeight: FontWeight.bold,
@@ -43,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 100,
             ),
-            Padding(
+            const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5),
                 child: CustomTextFormField(
                   labelText: 'Email',
@@ -53,6 +54,36 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 35,
             ),
+            const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: CustomTextFormField(
+                  hintText: 'Password',
+                  labelText: 'Password',
+                  isPasswordField: true,
+                  inputType: TextInputType.text,
+                )),
+            const SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: BlueButton(title: 'login', onTap: () {}),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Center(
+                  child: Text('Not have account?'),
+                ),
+                Center(
+                    child:
+                        InkWell(onTap: () {}, child: const Text('Signup here')))
+              ],
+            )
           ],
         ),
       ),
