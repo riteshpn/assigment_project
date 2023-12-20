@@ -1,4 +1,5 @@
 import 'package:assigment_project/constant/colors.dart';
+import 'package:assigment_project/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -12,30 +13,48 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          ClipPath(
-            clipper: Clip1Clipper(),
-            child: Container(
-              height: 250,
-              width: 250,
-              color: CommonConstant.darkBlue,
-              child: Center(
-                child: Text(
-                  'Login',
-                  style: TextStyle(
-                    fontSize: 45,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.only(top: 12),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            ClipPath(
+              clipper: Clip1Clipper(),
+              child: Container(
+                height: 250,
+                width: 250,
+                color: CommonConstant.darkBlue,
+                child: Center(
+                  child: Text(
+                    'Login',
+                    style: TextStyle(
+                      fontSize: 45,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
             ),
-          )
-        ],
+            const SizedBox(
+              height: 100,
+            ),
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: CustomTextFormField(
+                  labelText: 'Email',
+                  hintText: 'hello@reallygreat',
+                  inputType: TextInputType.emailAddress,
+                )),
+            const SizedBox(
+              height: 35,
+            ),
+          ],
+        ),
       ),
     );
   }
