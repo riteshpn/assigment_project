@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 5),
                 child: CustomTextFormField(
                   hintText: 'Password',
-                  labelText: 'Password',
+                  labelText: '*******',
                   isPasswordField: true,
                   inputType: TextInputType.text,
                 )),
