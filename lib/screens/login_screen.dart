@@ -1,4 +1,5 @@
 import 'package:assigment_project/constant/colors.dart';
+import 'package:assigment_project/screens/sign_up.dart';
 import 'package:assigment_project/widgets/blue_button.dart';
 import 'package:assigment_project/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +83,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Center(
                       child: InkWell(
-                          onTap: () {}, child: const Text('Signup here')))
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SignUpScreen()));
+                          },
+                          child: const Text('Signup here')))
                 ],
               )
             ],
