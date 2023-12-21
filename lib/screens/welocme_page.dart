@@ -1,5 +1,7 @@
 import 'package:assigment_project/constant/colors.dart';
+import 'package:assigment_project/screens/home_page.dart';
 import 'package:assigment_project/screens/sign_up.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -10,6 +12,31 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  bool _isLoading = false;
+
+  Future<void> _signInAsGuest() async {
+    setState(() {
+      _isLoading = true;
+    });
+    try {
+      UserCredential userCredential = await _auth.signInAnonymously();
+      if (userCredential.user != null) {
+        print('Signed in as a guest: ${userCredential.user!.uid}');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HomePage()),
+        );
+      }
+    } catch (e) {
+      print('Failed to sign in as a guest: $e');
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -112,18 +139,27 @@ class _WelcomePageState extends State<WelcomePage> {
             SizedBox(
               height: screenHeight * 0.02,
             ),
-            Container(
-              height: screenHeight * 0.07,
-              width: screenWidth * 0.83,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(screenHeight * 0.08),
-                border: Border.all(
-                  color: Colors.black,
-                  width: 2,
+            InkWell(
+              onTap: () {
+                _signInAsGuest();
+              },
+              child: Container(
+                height: screenHeight * 0.07,
+                width: screenWidth * 0.83,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(screenHeight * 0.08),
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 2,
+                  ),
                 ),
-              ),
-              child: const Center(
-                child: Text('Sign As Guest'),
+                child: Center(
+                  child: _isLoading
+                      ? CircularProgressIndicator(
+                          color: Colors.black,
+                        )
+                      : Text('Sign As Guest'),
+                ),
               ),
             ),
           ],
