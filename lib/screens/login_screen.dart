@@ -1,7 +1,11 @@
 import 'package:assigment_project/constant/colors.dart';
+import 'package:assigment_project/global/showtoast.dart';
+import 'package:assigment_project/screens/home_page.dart';
 import 'package:assigment_project/screens/sign_up.dart';
+import 'package:assigment_project/user_auth/firebase_auth_services.dart';
 import 'package:assigment_project/widgets/blue_button.dart';
 import 'package:assigment_project/widgets/custom_text_form_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -12,6 +16,13 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final FireBaseAuthService _auth = FireBaseAuthService();
+
+  bool _isSigning = false;
+
+  TextEditingController __useremailController = TextEditingController();
+  TextEditingController __userpasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,9 +57,10 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(
                 height: 100,
               ),
-              const Padding(
+              Padding(
                   padding: EdgeInsets.symmetric(horizontal: 5),
                   child: CustomTextFormField(
+                    controller: __useremailController,
                     labelText: 'Email',
                     hintText: 'hello@reallygreat',
                     inputType: TextInputType.emailAddress,
@@ -56,9 +68,10 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(
                 height: 35,
               ),
-              const Padding(
+              Padding(
                   padding: EdgeInsets.symmetric(horizontal: 5),
                   child: CustomTextFormField(
+                    controller: __userpasswordController,
                     hintText: '*******',
                     labelText: 'Password',
                     isPasswordField: true,
@@ -69,7 +82,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: BlueButton(title: 'login', onTap: () {}),
+                child: BlueButton(
+                    title: 'login',
+                    isLoading: _isSigning,
+                    onTap: () {
+                      _signIn();
+                    }),
               ),
               const SizedBox(
                 height: 30,
@@ -98,6 +116,29 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void _signIn() async {
+    setState(() {
+      _isSigning = true;
+    });
+
+    String email = __useremailController.text;
+    String password = __userpasswordController.text;
+
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+    setState(() {
+      _isSigning = false;
+    });
+
+    if (user != null) {
+      showToast(message: "User is sucessfully signed in");
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const HomePage()));
+    } else {
+      showToast(message: 'some error ocurred');
+    }
   }
 }
 

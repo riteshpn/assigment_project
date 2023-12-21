@@ -1,5 +1,5 @@
 import 'package:assigment_project/constant/colors.dart';
-import 'package:assigment_project/screens/login_screen.dart';
+import 'package:assigment_project/screens/sign_up.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -65,7 +65,7 @@ class _WelcomePageState extends State<WelcomePage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                  MaterialPageRoute(builder: (context) => const SignUpScreen()),
                 );
               },
               child: Container(
