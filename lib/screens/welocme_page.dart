@@ -155,10 +155,10 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
                 child: Center(
                   child: _isLoading
-                      ? CircularProgressIndicator(
+                      ? const CircularProgressIndicator(
                           color: Colors.black,
                         )
-                      : Text('Sign As Guest'),
+                      : const Text('Sign As Guest'),
                 ),
               ),
             ),

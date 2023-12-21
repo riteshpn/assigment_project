@@ -15,7 +15,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  String selectedValue = 'Owner';
+  String selectedValue = 'Owner/Renter';
   bool _isSighnUp = false;
   final FireBaseAuthService _auth = FireBaseAuthService();
   final TextEditingController _usernameController = TextEditingController();
@@ -123,38 +123,62 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 20,
               ),
-              Center(
-                child: DropdownButton<String>(
-                  icon: const Icon(Icons.arrow_drop_down),
-                  iconEnabledColor: Colors.blue,
-                  iconSize: 30,
-                  value: selectedValue,
-                  isExpanded: true,
-                  itemHeight: 60,
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      selectedValue = newValue!;
-                    });
-                  },
-                  items: <String>[
-                    'Owner',
-                    'Renter',
-                  ]
-                      .map<DropdownMenuItem<String>>(
-                        (String value) => DropdownMenuItem<String>(
-                          value: value,
-                          child: Center(
-                              child: Text(
-                            value,
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          )),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: Colors.grey.shade300,
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 0.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: DropdownButton<String>(
+                          icon:
+                              const SizedBox(), // Empty SizedBox to hide default icon
+                          underline:
+                              const SizedBox(), // Hides the default underline
+                          value: selectedValue,
+                          isExpanded: true,
+                          itemHeight: 60,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectedValue = newValue!;
+                            });
+                          },
+                          items: <String>['Owner', 'Renter', 'Owner/Renter']
+                              .map<DropdownMenuItem<String>>(
+                                (String value) => DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Center(
+                                    child: Text(
+                                      value,
+                                      style: const TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                              .toList(),
                         ),
-                      )
-                      .toList(),
+                      ),
+                      Container(
+                          width: 70,
+                          height: 60,
+                          decoration: const BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.only(
+                                  bottomRight: Radius.circular(10),
+                                  topRight: Radius.circular(10))),
+                          child: const Icon(Icons.arrow_drop_down,
+                              color: Colors.white, size: 30)),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(
