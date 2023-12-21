@@ -33,6 +33,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    clearTextFields();
+  }
+
+  void clearTextFields() {
+    __useremailController.clear();
+    __userpasswordController.clear();
+    __userpasswordController.clear();
+    _phoneController.clear();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -205,6 +218,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       showToast(message: 'user is successfully created');
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => HomePage()));
+      clearTextFields();
     } else {
       showToast(message: "Some error Happened");
     }

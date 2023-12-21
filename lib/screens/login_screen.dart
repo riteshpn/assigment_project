@@ -24,6 +24,17 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController __userpasswordController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    clearTextFields();
+  }
+
+  void clearTextFields() {
+    __useremailController.clear();
+    __userpasswordController.clear();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -136,6 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
       showToast(message: "User is sucessfully signed in");
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const HomePage()));
+          clearTextFields();
     } else {
       showToast(message: 'some error ocurred');
     }
