@@ -18,10 +18,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   String selectedValue = 'Owner';
   bool _isSighnUp = false;
   final FireBaseAuthService _auth = FireBaseAuthService();
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController __useremailController = TextEditingController();
-  TextEditingController __userpasswordController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController __useremailController = TextEditingController();
+  final TextEditingController __userpasswordController =
+      TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
 
   @override
   void dispose() {
@@ -124,7 +125,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               Center(
                 child: DropdownButton<String>(
-                  icon: Icon(Icons.arrow_drop_down),
+                  icon: const Icon(Icons.arrow_drop_down),
                   iconEnabledColor: Colors.blue,
                   iconSize: 30,
                   value: selectedValue,
@@ -160,7 +161,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 30,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+                padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: BlueButton(
                     title: _isSighnUp ? 'Signing Up...' : 'SignUp',
                     onTap: () {
@@ -189,7 +190,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           child: const Text('Log in here')))
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               )
             ],
@@ -217,7 +218,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     if (user != null) {
       showToast(message: 'user is successfully created');
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+          context, MaterialPageRoute(builder: (context) => const HomePage()));
       clearTextFields();
     } else {
       showToast(message: "Some error Happened");
