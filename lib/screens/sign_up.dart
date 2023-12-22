@@ -128,9 +128,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 90,
                 width: 350,
                 color: Colors.transparent,
-                child: Center(
-                  child: Stack(children: [
-                    Padding(
+                child: Stack(children: [
+                  Center(
+                    child: Padding(
                       padding: const EdgeInsets.only(left: 15, right: 15),
                       child: Container(
                         height: 65,
@@ -191,17 +191,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                     ),
-                    Positioned(
-                      bottom: 55,
-                      left: screenWidth * 0.01,
-                      right: screenWidth * 0.02,
-                      child: const Text(
-                        'User Type',
-                        overflow: TextOverflow.ellipsis,
+                  ),
+                  Positioned(
+                    top: 1,
+                    left: screenWidth * 0.08,
+                    right: screenWidth * 0.02,
+                    child: const Text(
+                      'User Type',
+                      style: TextStyle(
+                        fontSize: 18,
                       ),
                     ),
-                  ]),
-                ),
+                  ),
+                ]),
               ),
               const SizedBox(
                 height: 10,
