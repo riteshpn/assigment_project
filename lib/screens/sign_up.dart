@@ -6,6 +6,7 @@ import 'package:assigment_project/widgets/blue_button.dart';
 import 'package:assigment_project/widgets/custom_text_form_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -48,10 +49,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 12),
+          padding: EdgeInsets.symmetric(vertical: screenWidth * 0.03),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,8 +65,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ClipPath(
                 clipper: Clip1Clipper(),
                 child: Container(
-                  height: 230,
-                  width: 230,
+                  // height: 230,
+                  height: screenWidth * 0.60,
+                  width: screenWidth * 0.60,
                   color: Colors.blue,
                   child: const Center(
                     child: Text(
@@ -118,71 +122,89 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 inputType: TextInputType.number,
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    color: Colors.grey.shade300,
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 0.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: DropdownButton<String>(
-                          icon:
-                              const SizedBox(), // Empty SizedBox to hide default icon
-                          underline:
-                              const SizedBox(), // Hides the default underline
-                          value: selectedValue,
-                          isExpanded: true,
-                          itemHeight: 60,
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              selectedValue = newValue!;
-                            });
-                          },
-                          items: <String>['Owner', 'Renter', 'Owner/Renter']
-                              .map<DropdownMenuItem<String>>(
-                                (String value) => DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Center(
-                                    child: Text(
-                                      value,
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              )
-                              .toList(),
+              Container(
+                height: 90,
+                width: 350,
+                color: Colors.transparent,
+                child: Center(
+                  child: Stack(children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15, right: 15),
+                      child: Container(
+                        height: 65,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          color: Colors.grey.shade300,
+                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 0.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: DropdownButton<String>(
+                                icon:
+                                    const SizedBox(), // Empty SizedBox to hide default icon
+                                underline:
+                                    const SizedBox(), // Hides the default underline
+                                value: selectedValue,
+                                isExpanded: true,
+                                itemHeight: 60,
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    selectedValue = newValue!;
+                                  });
+                                },
+                                items:
+                                    <String>['Owner', 'Renter', 'Owner/Renter']
+                                        .map<DropdownMenuItem<String>>(
+                                          (String value) =>
+                                              DropdownMenuItem<String>(
+                                            value: value,
+                                            child: Center(
+                                              child: Text(
+                                                value,
+                                                style: const TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                        .toList(),
+                              ),
+                            ),
+                            Container(
+                                width: screenWidth * 0.2,
+                                height: screenWidth * 0.2,
+                                decoration: const BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.only(
+                                        bottomRight: Radius.circular(10),
+                                        topRight: Radius.circular(10))),
+                                child: const Icon(Icons.arrow_drop_down,
+                                    color: Colors.white, size: 30)),
+                          ],
                         ),
                       ),
-                      Container(
-                          width: 70,
-                          height: 60,
-                          decoration: const BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(10),
-                                  topRight: Radius.circular(10))),
-                          child: const Icon(Icons.arrow_drop_down,
-                              color: Colors.white, size: 30)),
-                    ],
-                  ),
+                    ),
+                    Positioned(
+                      bottom: 55,
+                      left: screenWidth * 0.01,
+                      right: screenWidth * 0.02,
+                      child: const Text(
+                        'User Type',
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ]),
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 10,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),

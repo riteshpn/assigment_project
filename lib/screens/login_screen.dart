@@ -36,10 +36,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 12),
+          padding: EdgeInsets.symmetric(vertical: screenWidth * 0.03),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,8 +51,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ClipPath(
                 clipper: Clip1Clipper(),
                 child: Container(
-                  height: 250,
-                  width: 250,
+                  height: screenWidth * 0.70,
+                  width: screenWidth * 0.70,
                   color: CommonConstant.darkBlue,
                   child: const Center(
                     child: Text(
@@ -65,8 +66,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 100,
+              SizedBox(
+                height: screenWidth * 0.30,
               ),
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: 5),
@@ -147,7 +148,7 @@ class _LoginScreenState extends State<LoginScreen> {
       showToast(message: "User is sucessfully signed in");
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const HomePage()));
-          clearTextFields();
+      clearTextFields();
     } else {
       showToast(message: 'some error ocurred');
     }
